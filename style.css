@@ -1,0 +1,164 @@
+/* Shared styling for the churate.com static pages.
+   Deliberately one small file with no build step: these pages exist to be
+   reachable and readable for years, not to be impressive. */
+
+:root {
+  --paper: #FAF8F2;      /* the app's own background */
+  --ink: #2B2B2B;
+  --ink-soft: #57544C;
+  --muted: #8A8577;
+  --rule: #E2DED7;
+  --green: #4B600F;
+  --green-lift: #8CC63F;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #171713;
+    --ink: #EDEAE1;
+    --ink-soft: #BDB8AB;
+    --muted: #8F8A7C;
+    --rule: #33322B;
+    --green: #A8CC5C;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Segoe UI", system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  margin: 0;
+  padding: 0 20px 80px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { max-width: 44rem; margin: 0 auto; }
+
+header.site {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding: 28px 0 18px;
+  border-bottom: 2px solid var(--ink);
+  margin-bottom: 34px;
+}
+header.site a.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-decoration: none;
+}
+header.site a.brand img {
+  display: block;
+  width: 36px;
+  height: 36px;
+}
+
+/* ------------------------------------------------------------------ hero */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+.hero img {
+  width: 96px;
+  height: 96px;
+  flex: none;
+}
+.hero-text { flex: 1 1 18rem; }
+.hero h1 { margin-bottom: 6px; }
+.lede {
+  font-size: 19px;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+/* Feature rows — a plain definition list, not cards. The page is short and
+   cards would be scaffolding around four sentences. */
+.features { margin: 26px 0 0; }
+.features div {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.features h3 { margin: 0 0 4px; }
+.features p { margin: 0; }
+
+.notice {
+  border-left: 3px solid var(--green-lift);
+  padding: 2px 0 2px 16px;
+  margin: 26px 0 0;
+  font-size: 15.5px;
+}
+header.site nav { display: flex; gap: 16px; margin-left: auto; }
+header.site nav a { font-size: 15px; color: var(--green); }
+
+h1 {
+  font-size: clamp(28px, 5vw, 38px);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  text-wrap: balance;
+  margin: 0 0 8px;
+}
+h2 {
+  font-size: 20px;
+  font-weight: 750;
+  margin: 38px 0 10px;
+  letter-spacing: -0.01em;
+}
+h3 { font-size: 17px; font-weight: 700; margin: 24px 0 6px; }
+
+p, li { color: var(--ink-soft); }
+p { margin: 0 0 14px; }
+ul { margin: 0 0 14px; padding-left: 22px; }
+li { margin-bottom: 7px; }
+strong { color: var(--ink); font-weight: 700; }
+
+.updated {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0 0 30px;
+}
+
+.callout {
+  background: transparent;
+  border-left: 3px solid var(--green-lift);
+  padding: 2px 0 2px 16px;
+  margin: 0 0 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 20px;
+  font-size: 15.5px;
+}
+th, td {
+  text-align: left;
+  padding: 9px 12px 9px 0;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+th { color: var(--ink); font-weight: 700; }
+
+a { color: var(--green); }
+a:focus-visible { outline: 2px solid var(--green-lift); outline-offset: 2px; }
+
+footer.site {
+  border-top: 1px solid var(--rule);
+  margin-top: 52px;
+  padding-top: 18px;
+  font-size: 14px;
+  color: var(--muted);
+}
