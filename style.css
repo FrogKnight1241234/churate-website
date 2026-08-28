@@ -448,6 +448,113 @@ footer.site .foot-row {
 footer.site a { color: var(--green); text-decoration: none; }
 footer.site a:hover { text-decoration: underline; }
 
+/* ------------------------------------------------- featured recipe cards - */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+  margin-top: 34px;
+}
+.r-card {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.r-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+.r-card .r-body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.r-card h3 { font-family: var(--display); font-size: 19px; font-weight: 650; margin: 0; letter-spacing: -0.01em; }
+.r-card .r-meta { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+.r-card .r-price { font-family: var(--mono); font-weight: 600; font-size: 15px; color: var(--green); margin-top: auto; padding-top: 8px; }
+.r-card .r-price small { color: var(--muted); font-weight: 400; }
+.sponsor-tag {
+  align-self: flex-start;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--amber);
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: 2px 9px;
+}
+/* the open slot that markets sponsorship without faking a sponsor */
+.r-card.slot {
+  border-style: dashed;
+  border-color: var(--rule-firm);
+  background: transparent;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 26px 22px;
+  gap: 10px;
+}
+.r-card.slot h3 { color: var(--ink); }
+.r-card.slot p { font-size: 14.5px; margin: 0; }
+.menu-note { font-size: 13.5px; color: var(--muted); margin-top: 18px; max-width: 46em; }
+
+/* --------------------------------------------------- partners page ------- */
+/* trolley proof: a depiction of the app's cheapest-trip screen — explicit
+   light colours in both site themes, like .phone above */
+.trolley-proof {
+  background: #FAF8F2;
+  border: 1px solid #E2DED7;
+  border-radius: 18px;
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  color: #2B2B2B;
+  box-shadow: 0 18px 48px rgba(43, 43, 43, 0.16);
+}
+.trolley-proof .t-cap {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8A8577;
+  margin: 0 0 12px;
+}
+.t-group {
+  background: #FFFFFF;
+  border: 1px solid #E2DED7;
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+.t-group .t-row { display: flex; justify-content: space-between; gap: 10px; font-weight: 700; }
+.t-group .t-row .t-amt { font-family: var(--mono); font-weight: 600; color: #57544C; }
+.t-group .t-row small { font-weight: 400; color: #8A8577; }
+.t-group.win { border: 2px solid #8CC63F; }
+.t-group.win .t-row, .t-group.win .t-row .t-amt { color: #4B600F; }
+.t-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  border-top: 1px dashed #E2DED7;
+  margin-top: 8px;
+  padding-top: 8px;
+  font-size: 13px;
+  font-weight: 400;
+}
+.t-line small { display: block; color: #8A8577; }
+.t-line .t-pr { font-family: var(--mono); font-weight: 600; color: #4B600F; white-space: nowrap; }
+
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 44px; align-items: center; }
+@media (max-width: 820px) { .split { grid-template-columns: 1fr; gap: 36px; } }
+
+.pledge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px 28px;
+  margin-top: 26px;
+}
+.pledge-grid p { margin: 0; font-size: 15px; }
+.pledge-grid strong { display: block; color: var(--green); margin-bottom: 3px; }
+
 /* -------------------------------------------------------- responsive ----- */
 @media (max-width: 820px) {
   .hero { grid-template-columns: 1fr; gap: 44px; padding: 40px 0 48px; }
