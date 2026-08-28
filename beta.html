@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Beta — ChurAte</title>
+<title>Beta · ChurAte</title>
 <meta name="description" content="Sign up for the ChurAte Android beta.">
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="stylesheet" href="style.css">
@@ -46,8 +46,9 @@
 
 <header class="masthead">
   <div class="bar">
-    <a class="brand" href="/"><img src="logo.png" alt="">Chur<span class="ate">Ate</span></a>
+    <a class="brand" href="/"><img src="logo.png" alt=""><span>Chur<span class="ate">Ate</span></span></a>
     <nav>
+      <a href="/">Try the app</a>
       <a href="/recipes.html">Recipes</a>
       <a href="/partners.html">Partners</a>
       <a href="/support.html">Support</a>
@@ -59,7 +60,7 @@
 <main class="doc">
   <h1>Join the beta.</h1>
   <p>
-    The Android beta is open now — you get the app before anyone else, and we
+    The Android beta is open now. You get the app before anyone else, and we
     get someone honest telling us when a price looks wrong. Fill this in and
     it opens an email to us with your details ready to send.
   </p>
@@ -70,7 +71,7 @@
 
     <label for="fPhone">Your phone</label>
     <input id="fPhone" name="phone" placeholder="e.g. Samsung Galaxy S23" required>
-    <p class="hint">Android for now — iOS is on the way. Any Android from the
+    <p class="hint">Android for now. iOS is on the way. Any Android from the
     last five or so years is fine.</p>
 
     <label for="fRegion">Where do you shop?</label>
@@ -91,9 +92,9 @@
     <li>You get each new version as it ships, straight from us.</li>
     <li>Everything works without an account, and the app never asks for your
     location or tracks you.</li>
-    <li>When a price looks off or something breaks, you tell us — there's a
+    <li>When a price looks off or something breaks, you tell us. There's a
     feedback button in the app that does the hard part.</li>
-    <li>It's free, and there's nothing to cancel — stop any time by
+    <li>It's free, and there's nothing to cancel. Stop any time by
     uninstalling.</li>
   </ul>
 </main>
@@ -117,7 +118,7 @@
     var body = 'Hi ChurAte,\n\nI would like to join the Android beta.\n\n' +
       'Name: ' + name + '\nPhone: ' + phone + '\nWhere I shop: ' + region + '\n';
     window.location.href = 'mailto:info@churate.com' +
-      '?subject=' + encodeURIComponent('ChurAte beta signup — ' + name) +
+      '?subject=' + encodeURIComponent('ChurAte beta signup (' + name + ')') +
       '&body=' + encodeURIComponent(body);
   });
 </script>
