@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beta — ChurAte</title>
+<meta name="description" content="Sign up for the ChurAte Android beta.">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="stylesheet" href="style.css">
+<style>
+  .beta-form { max-width: 30rem; }
+  .beta-form label { display: block; font-weight: 700; font-size: 14.5px; margin: 18px 0 6px; }
+  .beta-form input, .beta-form select {
+    width: 100%;
+    font: inherit;
+    font-size: 16px;
+    color: var(--charcoal);
+    background: var(--card);
+    border: 1.5px solid var(--line);
+    border-radius: 12px;
+    padding: 11px 14px;
+  }
+  .beta-form input:focus, .beta-form select:focus {
+    outline: none;
+    border-color: var(--brand);
+  }
+  .beta-form .hint { font-size: 13px; color: var(--muted); margin: 4px 0 0; }
+  .beta-form button {
+    margin-top: 24px;
+    font: inherit;
+    font-weight: 800;
+    font-size: 16px;
+    color: #FFFFFF;
+    background: var(--brand);
+    border: none;
+    border-radius: 999px;
+    padding: 13px 28px;
+    cursor: pointer;
+  }
+  .beta-form button:hover { background: var(--flesh-dark); }
+  .beta-form button:focus-visible { outline: 2px solid var(--brand-dark); outline-offset: 2px; }
+  .alt-note { font-size: 13.5px; color: var(--muted); margin-top: 16px; }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="bar">
+    <a class="brand" href="/"><img src="logo.png" alt="">Chur<span class="ate">Ate</span></a>
+    <nav>
+      <a href="/recipes.html">Recipes</a>
+      <a href="/partners.html">Partners</a>
+      <a href="/support.html">Support</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap-narrow">
+<main class="doc">
+  <h1>Join the beta.</h1>
+  <p>
+    The Android beta is open now — you get the app before anyone else, and we
+    get someone honest telling us when a price looks wrong. Fill this in and
+    it opens an email to us with your details ready to send.
+  </p>
+
+  <form class="beta-form" id="betaForm">
+    <label for="fName">Your name</label>
+    <input id="fName" name="name" autocomplete="name" required>
+
+    <label for="fPhone">Your phone</label>
+    <input id="fPhone" name="phone" placeholder="e.g. Samsung Galaxy S23" required>
+    <p class="hint">Android for now — iOS is on the way. Any Android from the
+    last five or so years is fine.</p>
+
+    <label for="fRegion">Where do you shop?</label>
+    <input id="fRegion" name="region" placeholder="e.g. Cambridge / Waikato" required>
+    <p class="hint">So we make sure your local stores are in our price data
+    before you start.</p>
+
+    <button type="submit">Open my signup email</button>
+    <p class="alt-note">
+      Prefer to just write to us? Email
+      <a href="mailto:info@churate.com?subject=ChurAte%20beta%20signup">info@churate.com</a>
+      with your name, phone model and where you shop.
+    </p>
+  </form>
+
+  <h2>What being a tester means</h2>
+  <ul>
+    <li>You get each new version as it ships, straight from us.</li>
+    <li>Everything works without an account, and the app never asks for your
+    location or tracks you.</li>
+    <li>When a price looks off or something breaks, you tell us — there's a
+    feedback button in the app that does the hard part.</li>
+    <li>It's free, and there's nothing to cancel — stop any time by
+    uninstalling.</li>
+  </ul>
+</main>
+</div>
+
+<footer class="site"><div class="wrap">
+  <div class="foot-row">
+    <span>ChurAte · New Zealand</span>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/terms.html">Terms</a>
+    <a href="mailto:info@churate.com">info@churate.com</a>
+  </div>
+</div></footer>
+
+<script>
+  document.getElementById('betaForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = document.getElementById('fName').value.trim();
+    var phone = document.getElementById('fPhone').value.trim();
+    var region = document.getElementById('fRegion').value.trim();
+    var body = 'Hi ChurAte,\n\nI would like to join the Android beta.\n\n' +
+      'Name: ' + name + '\nPhone: ' + phone + '\nWhere I shop: ' + region + '\n';
+    window.location.href = 'mailto:info@churate.com' +
+      '?subject=' + encodeURIComponent('ChurAte beta signup — ' + name) +
+      '&body=' + encodeURIComponent(body);
+  });
+</script>
+</body>
+</html>

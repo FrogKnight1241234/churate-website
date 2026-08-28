@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ChurAte — plan meals, compare NZ grocery prices</title>
-<meta name="description" content="ChurAte turns a week of meals into one shopping list, priced against real New Zealand supermarket data — so you know what dinner costs before the checkout.">
+<title>ChurAte — plan meals, know what dinner costs</title>
+<meta name="description" content="ChurAte turns a week of meals into one shopping list, priced with real New Zealand supermarket data — so you know what dinner costs before you shop.">
 <meta property="og:title" content="ChurAte — plan the week, see what it costs">
 <meta property="og:description" content="A meal planner that knows New Zealand grocery prices. No ads, no tracking, works without an account.">
 <meta property="og:image" content="https://churate.com/logo.png">
@@ -13,214 +13,104 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<header class="masthead">
+  <div class="bar">
+    <a class="brand" href="/"><img src="logo.png" alt="">Chur<span class="ate">Ate</span></a>
+    <nav>
+      <a href="/recipes.html">Recipes</a>
+      <a href="/partners.html">Partners</a>
+      <a href="/support.html">Support</a>
+    </nav>
+  </div>
+</header>
+
 <div class="wrap">
 
-<header class="site">
-  <a class="brand" href="/"><img src="logo.png" alt="" width="34" height="34"><span>ChurAte</span></a>
-  <nav>
+<!-- ================================================================ hero -->
+<section class="hero">
+  <div>
+    <p class="kicker">Made in New Zealand</p>
+    <h1>Plan the week's meals. Know what dinner costs before you shop.</h1>
+    <p class="lede">
+      Pick recipes, and ChurAte turns them into one shopping list — pantry
+      subtracted, grouped by aisle, and priced with real NZ supermarket data
+      that updates every night.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-solid" href="/beta.html">Sign up for the beta</a>
+      <a class="btn btn-ghost" href="/recipes.html">See the recipes</a>
+    </div>
+    <!-- launch day: replace these two chips with the official Google Play /
+         App Store badge links — they stay first under the CTA on purpose -->
+    <div class="store-badges">
+      <span class="store-badge">Google Play<small>coming soon</small></span>
+      <span class="store-badge">App Store<small>coming soon</small></span>
+    </div>
+  </div>
+
+  <div>
+    <div class="shot"><img src="img/app-planner.png" alt="The ChurAte planner: a week of meals with an estimated total, in the app itself"></div>
+    <p class="shot-caption">The actual app — this is a real screenshot.</p>
+  </div>
+</section>
+
+<!-- ======================================================== what it does -->
+<section class="band">
+  <p class="kicker">What it does</p>
+  <h2>Three things, done properly.</h2>
+  <div class="card-grid">
+    <div class="card">
+      <div class="num">1</div>
+      <h3>Plan the week</h3>
+      <p>Use our recipe book, paste a recipe from any website, or photograph
+      one out of a cookbook — the photo is read on your phone and never
+      uploaded.</p>
+    </div>
+    <div class="card">
+      <div class="num">2</div>
+      <h3>Get one smart list</h3>
+      <p>Every ingredient merged, what's in your pantry subtracted, the rest
+      grouped by aisle and priced at the stores you actually shop at.</p>
+    </div>
+    <div class="card">
+      <div class="num">3</div>
+      <h3>Shop it the cheapest way</h3>
+      <p>See the cheapest way to buy the week — one big shop or a smart
+      split — and tick things off as you go. Local stores you love can
+      join the comparison too.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ beta -->
+<section class="band">
+  <div class="wash">
+    <p class="kicker">Early access</p>
+    <h2>Help us test it.</h2>
+    <p class="band-lede">
+      ChurAte is nearly ready for the app stores. Join the Android beta —
+      all we ask is that you tell us when something looks wrong.
+    </p>
+    <div class="cta-row" style="margin-top: 18px">
+      <a class="btn btn-solid" href="/beta.html">Sign up for the beta</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <p class="fine">
+    Prices in the app are gathered from publicly available sources and are
+    indicative only — always check in store. ChurAte is an independent app,
+    not affiliated with or endorsed by any supermarket or grocery chain.
+  </p>
+  <div class="foot-row">
+    <span>ChurAte · New Zealand</span>
+    <a href="/recipes.html">Recipes</a>
     <a href="/partners.html">Partners</a>
     <a href="/support.html">Support</a>
     <a href="/privacy.html">Privacy</a>
     <a href="/terms.html">Terms</a>
-  </nav>
-</header>
-
-<!-- ================================================================ hero -->
-<section class="hero">
-  <div class="hero-copy">
-    <p class="kicker">NZ grocery prices · meal planning</p>
-    <h1>Know what dinner costs <em>before</em> the checkout.</h1>
-    <p class="lede">
-      ChurAte turns a week of meals into one shopping list and prices it
-      against real New Zealand supermarket data — Pak'nSave, New World and
-      Woolworths, at the branches you actually shop at.
-    </p>
-    <div class="cta-row">
-      <a class="btn btn-solid" href="mailto:info@churate.com?subject=ChurAte%20beta">Try the beta</a>
-      <a class="btn btn-ghost" href="#how">How it works</a>
-    </div>
-    <p class="cta-note">In development · Android beta by invitation · iOS on the way</p>
-  </div>
-
-  <!-- a depiction of the actual shopping list, with the app's real prices -->
-  <div class="phone" role="img" aria-label="The ChurAte shopping list, showing a priced trolley split across supermarkets">
-    <div class="phone-screen">
-      <div class="p-appbar"><img src="logo.png" alt=""><strong>ChurAte</strong></div>
-      <div class="p-tabs">
-        <span class="p-tab on">CHEAPEST</span>
-        <span class="p-tab">PAK'NSAVE</span>
-        <span class="p-tab">NEW WORLD</span>
-        <span class="p-tab">WOOLWORTHS</span>
-      </div>
-      <div class="p-save"><strong>$87.40 this week</strong>$12.10 cheaper than the dearest one-store shop</div>
-      <div class="p-aisle">PRODUCE</div>
-      <div class="p-item"><span class="p-check done"></span><span class="n">Brown onions<small>150 g needed</small></span><span class="pr">$0.33</span></div>
-      <div class="p-item"><span class="p-check done"></span><span class="n">Carrots<small>120 g needed</small></span><span class="pr">$0.21</span></div>
-      <div class="p-item"><span class="p-check"></span><span class="n">Garlic<small>50 g · from 1 bulb</small></span><span class="pr">$0.35</span></div>
-      <div class="p-aisle">MEAT &amp; PANTRY</div>
-      <div class="p-item"><span class="p-check"></span><span class="n">Beef mince<small>500 g needed</small></span><span class="pr">$12.99</span></div>
-      <div class="p-item"><span class="p-check"></span><span class="n">Spaghetti 400 g<small>1 pack</small></span><span class="pr">$1.29</span></div>
-      <div class="p-bottom"><span>Plan</span><span>Recipes</span><span class="on">Shop</span><span>Pantry</span><span>Profile</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ========================================================= how it works -->
-<section class="band" id="how">
-  <p class="kicker">How it works</p>
-  <h2>Three steps between "what's for dinner?" and the cheapest trolley.</h2>
-  <div class="steps">
-    <div class="step">
-      <div class="num">1</div>
-      <h3>Plan the week</h3>
-      <p>Pick recipes — ours, one pasted from any website, or one photographed
-      straight out of a cookbook. The photo is read on your phone and never
-      uploaded.</p>
-    </div>
-    <div class="step">
-      <div class="num">2</div>
-      <h3>Get one priced list</h3>
-      <p>ChurAte merges every ingredient, subtracts what's already in your
-      pantry, groups the rest by aisle, and prices it at your local branches.</p>
-    </div>
-    <div class="step">
-      <div class="num">3</div>
-      <h3>Shop it the cheapest way</h3>
-      <p>See whether splitting the shop across stores beats one big shop —
-      or lock the list to a single supermarket and go.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ====================================================== featured menu -->
-<section class="band" id="menu">
-  <p class="kicker">From the launch menu</p>
-  <h2>Real recipes, priced by the app — add them straight to your week.</h2>
-  <p class="band-lede">
-    Every recipe in ChurAte carries a live per-serve price, worked out from
-    what the meal actually uses — not the whole bag of flour. Here's what
-    these cost right now.
-  </p>
-  <div class="menu-grid">
-    <div class="r-card">
-      <img src="img/loaded-kumara.jpg" alt="Roasted kumara wedges with sour cream and herbs">
-      <div class="r-body">
-        <h3>Loaded Baked Kumara</h3>
-        <p class="r-meta">MEAL · SERVES 2</p>
-        <p class="r-price">$6.26 <small>a serve</small></p>
-      </div>
-    </div>
-    <div class="r-card">
-      <img src="img/bacon-egg-pie.jpg" alt="Poached eggs with spinach on toasted sourdough">
-      <div class="r-body">
-        <h3>Bacon &amp; Egg Pie</h3>
-        <p class="r-meta">MEAL · SERVES 6</p>
-        <p class="r-price">$2.92 <small>a serve</small></p>
-      </div>
-    </div>
-    <div class="r-card">
-      <img src="img/banana-cake.jpg" alt="Banana loaf cake topped with banana slices and walnuts">
-      <div class="r-body">
-        <h3>Banana Cake with Cream Cheese Icing</h3>
-        <p class="r-meta">BAKING · 8 SLICES</p>
-        <p class="r-price">$1.58 <small>a slice</small></p>
-      </div>
-    </div>
-    <div class="r-card slot">
-      <span class="sponsor-tag">Sponsored</span>
-      <h3>Your recipe here</h3>
-      <p>Sponsored recipes sit in this row and inside the app's recipe book —
-      your product, in meals people actually plan and shop. One tap adds the
-      whole thing to their week.</p>
-      <p><a href="/partners.html">Partner with ChurAte →</a></p>
-    </div>
-  </div>
-  <p class="menu-note">
-    Prices come from the app's nightly supermarket data and move with the
-    shelves — what you see in the app on the day is what counts.
-  </p>
-</section>
-
-<!-- ============================================================ per serve -->
-<section class="band">
-  <div class="receipt-band">
-    <div>
-      <p class="kicker">Per serve, not per pack</p>
-      <h2>A bag of oats isn't the price of one bowl of porridge.</h2>
-      <p class="band-lede">
-        Most apps show you the till total, which makes home cooking look
-        expensive — a whole bag of flour against one cake. ChurAte shows what a
-        meal actually uses, so you can compare recipes fairly. The rest isn't
-        wasted money; it's next week's ingredients, sitting in your pantry.
-      </p>
-    </div>
-    <div class="receipt" role="img" aria-label="A receipt comparing till price with cost per serve">
-      <h4>CHURATE · PER SERVE</h4>
-      <div class="r-line"><span>Spaghetti bolognese ×4</span><span class="val">$4.57 /serve</span></div>
-      <div class="r-line faint"><span>at the till</span><span class="val">$20.32</span></div>
-      <hr>
-      <div class="r-line"><span>Anzac biscuits ×12</span><span class="val">$0.49 /biscuit</span></div>
-      <div class="r-line faint"><span>at the till</span><span class="val">$21.66</span></div>
-      <hr>
-      <div class="r-line"><span>Banana cake ×8</span><span class="val">$1.58 /slice</span></div>
-      <div class="r-line faint"><span>at the till</span><span class="val">$26.11</span></div>
-      <hr>
-      <div class="r-line total"><span>Stays in your pantry</span><span class="val">≈ $27</span></div>
-      <p class="r-note">real prices from the app's catalog · they change daily</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================== privacy -->
-<section class="band">
-  <p class="kicker">Quiet by design</p>
-  <p class="stance">
-    <span class="no">No ads.</span> <span class="no">No analytics.</span>
-    <span class="no">No tracking.</span><br>Just groceries.
-  </p>
-  <ul class="tick-list">
-    <li>Works fully without an account — sign-in exists only so your data can follow you to a new phone.</li>
-    <li>Recipe photos are read on your device and never leave it.</li>
-    <li>Never asks for your location.</li>
-    <li>The <a href="/privacy.html">privacy policy</a> is short, because there is genuinely very little to say.</li>
-  </ul>
-</section>
-
-<!-- ================================================================= beta -->
-<section class="band">
-  <div class="beta">
-    <p class="kicker">Early access</p>
-    <h2>Help us test it.</h2>
-    <p class="band-lede">
-      ChurAte is being built in New Zealand and is nearly ready for the app
-      stores. If you'd like the Android beta — and don't mind telling us when
-      a price looks wrong — we'd love the help.
-    </p>
-    <div class="cta-row" style="margin-top: 20px">
-      <a class="btn btn-solid" href="mailto:info@churate.com?subject=ChurAte%20beta">Email for an invite</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================ fine print -->
-<section class="band">
-  <p class="fine">
-    Prices are gathered from publicly available supermarket websites and are
-    <strong>indicative only</strong> — they can be out of date, and matching
-    thousands of listings to everyday ingredients is imperfect. The app shows
-    how old each store's prices are and flags lines that look wrong, but always
-    check in store. ChurAte is an independent app and is not affiliated with,
-    endorsed by or connected to any supermarket or grocery chain.
-  </p>
-</section>
-
-<footer class="site">
-  <div class="foot-row">
-    <span>ChurAte · New Zealand</span>
-    <a href="/partners.html">Partners</a>
-    <a href="/privacy.html">Privacy policy</a>
-    <a href="/terms.html">Terms of use</a>
-    <a href="/support.html">Support</a>
     <a href="mailto:info@churate.com">info@churate.com</a>
   </div>
 </footer>
