@@ -4,9 +4,53 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Recipes · ChurAte</title>
-<meta name="description" content="The ChurAte recipe book is coming soon, and partner recipes will be part of it.">
+<meta name="description" content="The ChurAte recipe book is coming soon. Send us your budget family recipe, or put your product in it as a partner.">
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="stylesheet" href="style.css">
+<style>
+  .beta-form { max-width: 30rem; }
+  .beta-form label { display: block; font-weight: 700; font-size: 14.5px; margin: 18px 0 6px; }
+  .beta-form input, .beta-form textarea {
+    width: 100%;
+    font: inherit;
+    font-size: 16px;
+    color: var(--charcoal);
+    background: var(--card);
+    border: 1.5px solid var(--line);
+    border-radius: 12px;
+    padding: 11px 14px;
+  }
+  .beta-form textarea { min-height: 120px; resize: vertical; }
+  .beta-form input:focus, .beta-form textarea:focus {
+    outline: none;
+    border-color: var(--brand);
+  }
+  .beta-form .hint { font-size: 13px; color: var(--muted); margin: 4px 0 0; }
+  .beta-form .agree {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-top: 20px;
+    font-size: 13.5px;
+    color: var(--muted);
+  }
+  .beta-form .agree input { width: auto; margin-top: 2px; }
+  .beta-form button {
+    margin-top: 24px;
+    font: inherit;
+    font-weight: 800;
+    font-size: 16px;
+    color: #FFFFFF;
+    background: var(--brand);
+    border: none;
+    border-radius: 999px;
+    padding: 13px 28px;
+    cursor: pointer;
+  }
+  .beta-form button:hover { background: var(--flesh-dark); }
+  .beta-form button:focus-visible { outline: 2px solid var(--brand-dark); outline-offset: 2px; }
+  .alt-note { font-size: 13.5px; color: var(--muted); margin-top: 16px; }
+</style>
 </head>
 <body>
 
@@ -44,6 +88,58 @@
 </section>
 
 <section class="band band-white">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <p class="kicker">Your recipes</p>
+        <h2>The best Kiwi recipes come from Kiwi kitchens.</h2>
+        <p class="band-lede">
+          Got a cheap, easy meal your family actually eats on a Tuesday?
+          We would love to put it in the book, with your name on it, priced
+          per serve at real supermarket prices. Fill this in and it opens an
+          email to us with your recipe ready to send.
+        </p>
+        <p class="band-lede">
+          Attach a photo of the dish to the email if you have one. Your own
+          photo, and your own recipe: nothing copied out of a book or off
+          another website.
+        </p>
+      </div>
+      <form class="beta-form" id="recipeForm">
+        <label for="rName">Your name</label>
+        <input id="rName" name="name" autocomplete="name" required>
+        <p class="hint">How you'll be credited in the app, e.g. "Recipe by Sam T, Hamilton".</p>
+
+        <label for="rTitle">What's the meal called?</label>
+        <input id="rTitle" name="title" placeholder="e.g. Nana's Corned Beef Hash" required>
+
+        <label for="rServes">Feeds how many?</label>
+        <input id="rServes" name="serves" placeholder="e.g. 4" required>
+
+        <label for="rIngredients">Ingredients</label>
+        <textarea id="rIngredients" name="ingredients" placeholder="One per line, with amounts:&#10;500 g beef mince&#10;1 onion&#10;2 cups rice" required></textarea>
+
+        <label for="rMethod">How do you make it?</label>
+        <textarea id="rMethod" name="method" placeholder="A few short steps. Write it like you'd tell a mate." required></textarea>
+
+        <label class="agree">
+          <input type="checkbox" id="rAgree" required>
+          <span>This recipe (and any photo I attach) is my own, and ChurAte
+          may publish it in the app and on this site, credited to me.</span>
+        </label>
+
+        <button type="submit">Open my recipe email</button>
+        <p class="alt-note">
+          Prefer to just write to us? Email
+          <a href="mailto:info@churate.com?subject=My%20recipe%20for%20ChurAte">info@churate.com</a>
+          with the recipe, your name, and a photo if you have one.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="band band-wash">
   <div class="wrap">
     <div class="split">
       <div>
@@ -105,5 +201,27 @@
   </div></div>
 </footer>
 
+<script>
+  document.getElementById('recipeForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = document.getElementById('rName').value.trim();
+    var title = document.getElementById('rTitle').value.trim();
+    var serves = document.getElementById('rServes').value.trim();
+    var ingredients = document.getElementById('rIngredients').value.trim();
+    var method = document.getElementById('rMethod').value.trim();
+    var body = 'Hi ChurAte,\n\nHere is my recipe for the app.\n\n' +
+      'My name (for the credit): ' + name + '\n' +
+      'Recipe: ' + title + '\n' +
+      'Feeds: ' + serves + '\n\n' +
+      'Ingredients:\n' + ingredients + '\n\n' +
+      'Method:\n' + method + '\n\n' +
+      'This recipe (and any photo I attach) is my own, and ChurAte may ' +
+      'publish it in the app and on churate.com, credited to me.\n\n' +
+      'PS: attach a photo of the dish to this email if you have one!\n';
+    window.location.href = 'mailto:info@churate.com' +
+      '?subject=' + encodeURIComponent('My recipe for ChurAte: ' + title) +
+      '&body=' + encodeURIComponent(body);
+  });
+</script>
 </body>
 </html>
