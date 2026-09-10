@@ -325,8 +325,9 @@ th { font-weight: 700; }
 
 /* -------------------------------------------------------------- footer --- */
 footer.bigfoot {
-  background: var(--brand-dark);
-  color: #EDF3DC;
+  /* the same green as the masthead — one chrome colour, top and bottom */
+  background: var(--flesh);
+  color: #FFFFFF;
   margin-top: 0;
 }
 footer.bigfoot .cols {
@@ -350,7 +351,7 @@ footer.bigfoot .fbrand {
 }
 footer.bigfoot .fbrand img { width: 28px; height: 28px; }
 footer.bigfoot .fbrand .ate { color: var(--lime); }
-footer.bigfoot .ftag { font-size: 14.5px; color: #C9D8A4; margin-top: 10px; max-width: 26em; }
+footer.bigfoot .ftag { font-size: 14.5px; color: rgba(255, 255, 255, 0.88); margin-top: 10px; max-width: 26em; }
 footer.bigfoot h4 {
   font-size: 12.5px;
   font-weight: 800;
@@ -361,18 +362,18 @@ footer.bigfoot h4 {
 }
 footer.bigfoot ul { list-style: none; margin: 0; padding: 0; }
 footer.bigfoot li { margin: 0 0 9px; }
-footer.bigfoot a { color: #EDF3DC; text-decoration: none; font-size: 15px; }
-footer.bigfoot a:hover { color: #FFFFFF; text-decoration: underline; }
+footer.bigfoot a { color: #FFFFFF; text-decoration: none; font-size: 15px; font-weight: 600; }
+footer.bigfoot a:hover { text-decoration: underline; }
 footer.bigfoot a:focus-visible { outline: 2px solid var(--lime); outline-offset: 2px; }
 footer.bigfoot .legal {
-  border-top: 1px solid rgba(237, 243, 220, 0.22);
+  border-top: 1px solid rgba(255, 255, 255, 0.32);
 }
 footer.bigfoot .legal .in {
   max-width: 71rem;
   margin: 0 auto;
   padding: 18px 28px 26px;
   font-size: 13px;
-  color: #C9D8A4;
+  color: rgba(255, 255, 255, 0.88);
 }
 
 /* ---------------------------------------------------------- responsive --- */
